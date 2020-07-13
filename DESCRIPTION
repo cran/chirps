@@ -1,7 +1,7 @@
 Package: chirps
 Type: Package
 Title: API Client for CHIRPS
-Version: 0.1.0
+Version: 0.1.2
 Authors@R: c(person("Kauê", "de Sousa", 
         email = "kaue.desousa@inn.no", role = c("aut", "cre"),
         comment = c(ORCID = "0000-0002-7571-7845")), 
@@ -30,10 +30,10 @@ Depends: R (>= 3.5.0), methods
 Imports: crul, jsonlite, sf, stats
 Suggests: knitr, markdown, rmarkdown, testthat (>= 2.1.0), vcr (>= 0.5)
 Language: en-GB
-RoxygenNote: 7.1.0
+RoxygenNote: 7.1.1
 VignetteBuilder: knitr
 NeedsCompilation: no
-Packaged: 2020-07-01 15:14:40 UTC; kauefeitosadiasdesousa
+Packaged: 2020-07-13 14:30:48 UTC; kauefeitosadiasdesousa
 Author: Kauê de Sousa [aut, cre] (<https://orcid.org/0000-0002-7571-7845>),
   Adam H. Sparks [aut] (<https://orcid.org/0000-0002-0061-8359>),
   William Ashmall [ctb] (API Client implementation),
@@ -41,4 +41,4 @@ Author: Kauê de Sousa [aut, cre] (<https://orcid.org/0000-0002-7571-7845>),
   Svein Ø. Solberg [ths] (<https://orcid.org/0000-0002-4491-4483>)
 Maintainer: Kauê de Sousa <kaue.desousa@inn.no>
 Repository: CRAN
-Date/Publication: 2020-07-03 14:20:07 UTC
+Date/Publication: 2020-07-13 16:30:03 UTC
