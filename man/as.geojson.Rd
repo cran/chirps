@@ -14,7 +14,7 @@ as.geojson(lonlat, dist = 1e-05, nQuadSegs = 2L, ...)
 }
 \arguments{
 \item{lonlat}{a data.frame or matrix with geographical coordinates lonlat, in 
-that order, or an object of class 'sf' and geometry type 'POINT' or 'POLYGON'}
+that order, or an object of class 'sf' with geometry type 'POINT' or 'POLYGON'}
 
 \item{dist}{numeric, buffer distance for all \code{lonlat}}
 
@@ -26,18 +26,18 @@ that order, or an object of class 'sf' and geometry type 'POINT' or 'POLYGON'}
 An object of class 'geosjon' for each row in \code{lonlat}
 }
 \description{
-Take single points from geographical coordinates and coerce it into a
-geojson 'Polygon' string
+Take single points from geographical coordinates and coerce into a
+geojson of geometry 'Polygon'
 }
 \examples{
-\donttest{
+\dontshow{if (interactive()) (if (getRversion() >= "3.4") withAutoprint else force)(\{ # examplesIf}
 # Default S3 Method
 # random geographic points within bbox(10, 12, 45, 47)
 library("sf")
 
 set.seed(123)
-lonlat <- data.frame(lon = runif(2, 10, 12),
-                     lat = runif(2, 45, 47))
+lonlat <- data.frame(lon = runif(1, 10, 12),
+                     lat = runif(1, 45, 47))
 
 gjson <- as.geojson(lonlat)
 
@@ -54,6 +54,6 @@ lonlat <- data.frame(lon = runif(5, 10, 12),
 lonlat <- st_as_sf(lonlat, coords = c("lon","lat"))
 
 gjson <- as.geojson(lonlat)
-}
+\dontshow{\}) # examplesIf}
 }
 \concept{utility functions}

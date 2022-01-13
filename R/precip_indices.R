@@ -21,28 +21,25 @@
 #' @references 
 #' 
 #' Aguilar E., et al. (2005). Journal of Geophysical Research, 110(D23), D23107.
-#'  \cr\url{https://doi.org/10.1029/2005JD006119}
 #' 
 #' Kehel Z., et al. (2016). In: Applied Mathematics and Omics to Assess Crop
 #'  Genetic Resources for Climate Change Adaptive Traits (eds Bari A., Damania
 #'  A. B., Mackay M., Dayanandan S.), pp. 151–174. CRC Press.
 #' 
-#' @examples
-#' \donttest{
+#' @examplesIf interactive()
 #' lonlat <- data.frame(lon = c(-55.0281,-54.9857),
 #'                      lat = c(-2.8094, -2.8756))
 #' 
 #' dates <- c("2017-12-15", "2017-12-31")
 #' 
-#' dt <- get_chirps(lonlat, dates)
+#' dt <- get_chirps(lonlat, dates, server = "ClimateSERV")
 #' 
 #' # take the indices for the entire period
 #' precip_indices(dt, timeseries = FALSE)
 #' 
 #' # take the indices for periods of 7 days
 #' precip_indices(dt, timeseries = TRUE, intervals = 7)
-#' 
-#' }
+#'
 #' @importFrom stats quantile
 #' @export
 precip_indices <- function(object, timeseries = FALSE, intervals = NULL) {

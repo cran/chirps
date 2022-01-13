@@ -1,3 +1,28 @@
+chirps 0.1.4 (2022-01-13) 
+=========================
+
+### ENHANCEMENTS 
+
+* Add new function `get_chirts()` to fetch temperature data from CHC server (https://data.chc.ucsb.edu/products/CHIRTSdaily/v1.0/global_cogs_p05/)
+* Implement data fetching from CHC server in `get_chirps()` which offers a better alternative for requests with multiple data points using GoC files from CHC server (https://data.chc.ucsb.edu/products/CHIRPS-2.0/global_daily/cogs/) and the `terra` package  
+* New S3 methods in `get_chirps()` for objects of class 'SpatVector' and 'SpatRaster' from the `terra` package
+* Data can be returned as an object of class 'matrix' when using the argument `as.matrix = TRUE` in the S3 methods for objects of class 'default', 'SpatVector' and 'SpatRaster'
+* Updates the URL to request data from ClimateSERV
+ 
+
+### CHANGES IN BEHAVIOUR
+
+* New argument `server = ` is added to indicate from which server the function should send the request, either 'CHC' or 'ClimateSERV'. Please use the argument `server = "ClimateSERV"` for backward compatibility with previous versions of the package. 
+* API requests to ClimateSERV use package httr instead of curl
+* Argument `operation = ` in `get_chirps()` is only required when `server = "ClimateSERV"`
+* Updates function `as.geojson()` to matches with the new requirements for ClimateSERV
+
+chirps 0.1.3 (2021-07-10)
+=========================
+
+* GitHub version with ongoing updates and changes in behaviour. 
+
+
 chirps 0.1.2 (2020-07-12)
 =========================
 
@@ -33,7 +58,7 @@ chirps 0.0.6 (2020-01-29)
 
 * Comments/suggestions given by Claudia Vitolo in rOpenSci pkg review are added
 * `dataframe_to_geojson()`, `sf_to_geojson()` are added as exported functions avoiding `chirps:::`
-* documentation for `tapajos` is given avoiding chirps:::
+* documentation for `tapajos` is given avoiding `chirps:::`
 
 
 chirps 0.0.5 (2020-01-09)
